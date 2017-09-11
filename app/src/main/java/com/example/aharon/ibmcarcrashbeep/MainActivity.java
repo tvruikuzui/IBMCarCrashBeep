@@ -65,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
                 != PackageManager.PERMISSION_GRANTED) {
 
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
+
+        }else {
+            Intent intent = new Intent(this , MyService.class);
+            startService(intent);
         }
     }
 
