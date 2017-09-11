@@ -30,6 +30,7 @@ public class IBMConversationService {
                 JSONObject jsonObject = new JSONObject(response.getOutput());
                 try {
                     Log.d("ahron", jsonObject.getJSONArray("text").getString(0));
+                    return jsonObject.getJSONArray("text").getString(0);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -42,11 +43,13 @@ public class IBMConversationService {
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                //System.out.println(s);
+//                TODO:get the response from IBM and send it to the alert
             }
         }.execute(message);
 
         return null;
     }
+
+
 
 }
