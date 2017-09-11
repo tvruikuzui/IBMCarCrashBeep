@@ -11,6 +11,7 @@ import android.hardware.SensorManager;
  */
 
 public class AccelerometerWork2 implements SensorEventListener {
+
     private static final int FORCE_THRESHOLD = 10000;
     private static final int TIME_THRESHOLD = 75;
     private static final int SHAKE_TIMEOUT = 500;
@@ -63,7 +64,7 @@ public class AccelerometerWork2 implements SensorEventListener {
 
     public interface OnShakeListener
     {
-        public void onShake();
+        void onShake();
     }
 
     public AccelerometerWork2(Context context)

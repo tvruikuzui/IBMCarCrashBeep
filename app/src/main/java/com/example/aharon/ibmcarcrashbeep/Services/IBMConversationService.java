@@ -1,6 +1,9 @@
 package com.example.aharon.ibmcarcrashbeep.Services;
 
+import android.app.Service;
+import android.content.Context;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.util.Log;
 
 import com.ibm.watson.developer_cloud.conversation.v1.ConversationService;
@@ -15,6 +18,12 @@ import org.json.JSONObject;
  */
 
 public class IBMConversationService {
+
+    private Context c;
+
+    public void setC(Context c) {
+        this.c = c;
+    }
 
     public String integrateWithIBM(String message){
 
@@ -49,7 +58,5 @@ public class IBMConversationService {
 
         return null;
     }
-
-
 
 }

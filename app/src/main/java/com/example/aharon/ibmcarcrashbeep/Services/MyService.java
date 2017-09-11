@@ -37,6 +37,8 @@ public class MyService extends Service implements AccelerometerWork2.OnShakeList
     public void onShake() {
         if(check==1) {
 //            TODO:implements an alert window!!!
+            IBMConversationService ibmConversationService = new IBMConversationService();
+            ibmConversationService.setC(this);
 //            Toast.makeText(MyService.this, "SHAKEN!", Toast.LENGTH_LONG).show();
 //            final Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 //            vib.vibrate(500);
