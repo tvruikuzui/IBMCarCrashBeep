@@ -89,13 +89,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
+    //@RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == 101){
-            if (Settings.canDrawOverlays(this)){
-                Toast.makeText(this, "can overlay", Toast.LENGTH_SHORT).show();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (Settings.canDrawOverlays(this)){
+                    Toast.makeText(this, "can overlay", Toast.LENGTH_SHORT).show();
+                }
             }
         }
     }
