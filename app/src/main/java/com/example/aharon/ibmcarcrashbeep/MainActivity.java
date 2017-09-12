@@ -1,6 +1,7 @@
 package com.example.aharon.ibmcarcrashbeep;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
@@ -23,7 +24,7 @@ import com.example.aharon.ibmcarcrashbeep.Services.IBMConversationService;
 import com.example.aharon.ibmcarcrashbeep.Services.MyService;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     LocationManager locationManager;
     LocationProvider provider;
