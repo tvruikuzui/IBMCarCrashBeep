@@ -30,6 +30,7 @@ public class IBMConversationService {
 
     public String integrateWithIBM(String message){
 
+        final String response = "";
         new AsyncTask<String, Void, String>() {
             @Override
             protected String doInBackground(String... params) {
@@ -80,6 +81,7 @@ public class IBMConversationService {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
 //                TODO:get the response from IBM and send it to the alert
+                //response = s;
             }
         }.execute(message);
 

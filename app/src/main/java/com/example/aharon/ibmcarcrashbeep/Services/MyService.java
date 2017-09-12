@@ -43,7 +43,7 @@ public class MyService extends Service implements AccelerometerWork2.OnShakeList
 //            TODO:implements an alert window!!!
             IBMConversationService ibmConversationService = new IBMConversationService();
             ibmConversationService.setC(this);
-           Toast.makeText(MyService.this, "SHAKEN!", Toast.LENGTH_LONG).show();
+            Toast.makeText(MyService.this, "SHAKEN!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, PopUo.class);
             startActivity(intent);
 //            final Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
