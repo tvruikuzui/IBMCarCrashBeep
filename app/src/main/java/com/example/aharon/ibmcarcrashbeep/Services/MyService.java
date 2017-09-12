@@ -1,33 +1,31 @@
 package com.example.aharon.ibmcarcrashbeep.Services;
 
-import android.app.Activity;
+import android.Manifest;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
+import android.os.Build;
 import android.os.IBinder;
-import android.support.v4.app.FragmentManager;
+import android.os.Vibrator;
+import android.support.annotation.IntDef;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.aharon.ibmcarcrashbeep.PopUo;
-
 public class MyService extends Service implements AccelerometerWork2.OnShakeListener {
 
-    public int check;
     private AccelerometerWork2 mShaker;
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
-    private FragmentManager manager;
-
+    public int check;
 
     @Override
     public IBinder onBind(Intent intent) {
         return null;
     }
     public void onCreate() {
-
         super.onCreate();
         this.mSensorManager = ((SensorManager)getSystemService(Context.SENSOR_SERVICE));
         this.mAccelerometer = this.mSensorManager.getDefaultSensor(1);
@@ -43,12 +41,9 @@ public class MyService extends Service implements AccelerometerWork2.OnShakeList
 //            TODO:implements an alert window!!!
             IBMConversationService ibmConversationService = new IBMConversationService();
             ibmConversationService.setC(this);
-            Toast.makeText(MyService.this, "SHAKEN!", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(this,PopUo.class);
-            startActivity(intent);
-
-            //       final Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-            //         vib.vibrate(500);
+//            Toast.makeText(MyService.this, "SHAKEN!", Toast.LENGTH_LONG).show();
+//            final Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+//            vib.vibrate(500);
 //            Intent i = new Intent();
 //            i.setClass(this, CheckCertainty.class);
 //            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -58,8 +53,7 @@ public class MyService extends Service implements AccelerometerWork2.OnShakeList
     }
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        return super.onStartCommand(intent, flags, startId);
-
+        return START_STICKY;
     }
     public void onDestroy(){
         super.onDestroy();
