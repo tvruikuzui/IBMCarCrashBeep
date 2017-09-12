@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <FrameLayout
@@ -11,6 +13,30 @@
 
     </FrameLayout>
 
+    <at.markushi.ui.CircleButton
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_error"
+        android:onClick="error"
+        app:cb_color="#ffbb33"
+        app:cb_pressedRingWidth="8dip" />
+
+
+    <at.markushi.ui.CircleButton
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_notgood"
+        android:onClick="noOk"
+        app:cb_color="#ff4444"
+        app:cb_pressedRingWidth="8dip" />
+
+    <at.markushi.ui.CircleButton
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_ok"
+        android:onClick="ok"
+        app:cb_color="#00C851"
+        app:cb_pressedRingWidth="8dip" />
 
 
 </LinearLayout>
