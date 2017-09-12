@@ -14,6 +14,8 @@ import android.support.annotation.IntDef;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.aharon.ibmcarcrashbeep.PopUo;
+
 public class MyService extends Service implements AccelerometerWork2.OnShakeListener {
 
     private AccelerometerWork2 mShaker;
@@ -41,7 +43,9 @@ public class MyService extends Service implements AccelerometerWork2.OnShakeList
 //            TODO:implements an alert window!!!
             IBMConversationService ibmConversationService = new IBMConversationService();
             ibmConversationService.setC(this);
-//            Toast.makeText(MyService.this, "SHAKEN!", Toast.LENGTH_LONG).show();
+           Toast.makeText(MyService.this, "SHAKEN!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, PopUo.class);
+            startActivity(intent);
 //            final Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 //            vib.vibrate(500);
 //            Intent i = new Intent();
